@@ -25,13 +25,14 @@ export class AppComponent {
     input.value = '';
   }
 
-  colorTrackBy(index: any, color: any) {
+  colorTrackBy(index: number, color: Color) {
     return color.hex;
   }
 
-  sortFn = (a: Color, b: Color): any => {
+  sortFn = (a: Color, b: Color): number => {
     if (a.name < b.name) return -1;
     if (a.name === b.name) return 0;
     if (a.name > b.name) return 1;
+    return 0;
   }
 }
