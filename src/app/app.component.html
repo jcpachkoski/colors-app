@@ -1,7 +1,7 @@
 <div>
   <input #colorName id="colorName"/><button (click)="addColor(colorName)">Add</button>
   <ul>
-    <li *ngFor="let color of colors; trackBy: colorTrackBy">
+    <li *ngFor="let color of colors | orderBy:sortFn; trackBy: colorTrackBy">
       {{ color.name }}
     </li>
   </ul>

@@ -1,5 +1,10 @@
-import { Component, VERSION } from '@angular/core';
+import { Component } from '@angular/core';
 import { COLORS } from './colors';
+
+export interface Color {
+  name: string;
+  hex: string;
+}
 
 @Component({
   selector: 'app-root',
@@ -22,5 +27,11 @@ export class AppComponent {
 
   colorTrackBy(index: any, color: any) {
     return color.hex;
+  }
+
+  sortFn = (a: Color, b: Color): any => {
+    if (a.name < b.name) return -1;
+    if (a.name === b.name) return 0;
+    if (a.name > b.name) return 1;
   }
 }
